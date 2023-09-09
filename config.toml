@@ -1,0 +1,38 @@
+theme = "github_dark"
+
+[editor]
+scrolloff = 7
+line-number = "relative"
+cursorline = true
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.statusline]
+left = ["mode", "spacer", "spinner", "spacer", "version-control", "spacer", "diagnostics", "file-name"]
+right = ["selections", "file-type", "position", "file-encoding"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
+wrap-at-text-width = true
+
+[keys.normal]
+"J" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+"K" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+[keys.normal.space]
+";" = ["goto_line_end", ":append-output echo -n ';'"]
+"w" = ":w"
+"l" = ":sh cargo clippy 2>&1 || true"
+"c" = ":sh cargo run 2>&1 || true"
